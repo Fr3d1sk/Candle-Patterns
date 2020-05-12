@@ -1,4 +1,5 @@
 import pandas_datareader.data as web
+import os
 
 def main(symbol="AMZN", start="2000-01-01", end="2020-02-22",dataSource="yahoo"):
     df = web.DataReader(name=symbol, data_source=dataSource, start=start, end=end)
@@ -9,6 +10,9 @@ def main(symbol="AMZN", start="2000-01-01", end="2020-02-22",dataSource="yahoo")
         "Low": "low",
         "Volume": "volume"
     })
+    if not os.path.isdir("data/raw_history/stocks"):
+        os.mkdir("data/raw_history/stocks")
+
     df.to_csv(f"data/raw_history/stocks/{symbol}.csv")
     print(f"data saved for {symbol} from {start} to {end}")
 

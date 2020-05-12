@@ -29,6 +29,9 @@ bitmex_client = bitmex(test=False, api_key=bitmex_api_key,
                        api_secret=bitmex_api_secret)
 binance_client = Client(api_key=binance_api_key, api_secret=binance_api_secret)
 
+
+
+
 def delete_last_row(timeframe="1d", currency="BTCUSDT"):
     filepath = "data/raw_history/crypto/"
     #filepath = ""

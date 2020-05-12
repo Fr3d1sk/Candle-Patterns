@@ -3,7 +3,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 from Candlestick_patterns import Doji, Hammer, ShootingStar, GravestoneDoji, HangingMan
 import math
+import os
 
+if not os.path.isdir("data/pictures"):
+    os.mkdir("data/pictures")
 
 def plot_multiple_data(x_values, y_values, titles, n_rows, n_cols, save=False,
                        filename="image", save_path="data/pictures/"):
